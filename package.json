@@ -1,0 +1,43 @@
+{
+  "name": "@shoelace-style/animations",
+  "description": "Your favorite animate.css effects available as ES modules for use with the Web Animations API.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/shoelace-style/animations",
+  "author": "Cory LaViska",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shoelace-style/animations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shoelace-style/animations/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/claviska"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "animation",
+    "web animations api",
+    "animate.css"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "animate.css": "^4.1.1",
+    "css": "^3.0.0",
+    "del": "^6.0.0",
+    "glob": "^7.1.6",
+    "mkdirp": "^1.0.4",
+    "prettier": "^2.2.1"
+  }  
+}
