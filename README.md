@@ -6,6 +6,8 @@ Your favorite [animate.css](https://animate.style/) effects available as ES modu
 - 🚚 Works with CDNs
 - 🌲 Fully tree-shakeable
 
+[Try it on JSFiddle](https://jsfiddle.net/claviska/ohjmkgb1)
+
 This module was built for [Shoelace](https://shoelace.style/), but it works well as a stand-alone library too!
 
 ## Installation
@@ -31,20 +33,22 @@ import { bounce } from '@shoelace-style/animations';
 Animating an element:
 
 ```html
-<div style="display: block; width: 100px; height: 100px; background: tomato;"></div>
+<div style="display: block; width: 100px; height: 100px; background: tomato; margin: 2rem;"></div>
 
-<script>
-  import { bounce } from '@shoelace-style/animations';
+<script type="module">
+  import { flip } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/animations@1/dist/index.js';
 
-  const el = document.querySelector('div');
+  const box = document.querySelector('div');
 
-  el.animate(bounce, {
-    duration: 1000,
+  box.animate(flip, {
+    duration: 1500,
     iterations: Infinity,
     easing: 'linear'
   });
 </script>
 ```
+
+This example uses the [jsDelivr CDN](https://www.jsdelivr.com/). To import the library locally, install it and make `node_modules/@shoelace-style/animations/dist` available to your app or bundler.
 
 ## Developers
 
