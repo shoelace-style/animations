@@ -7,9 +7,10 @@
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "type": "module",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "node src/index.js",
+    "build": "node src/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -39,5 +40,5 @@
     "glob": "^7.1.6",
     "mkdirp": "^1.0.4",
     "prettier": "^2.2.1"
-  }  
+  }
 }
