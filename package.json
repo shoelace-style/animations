@@ -1,7 +1,7 @@
 {
   "name": "@shoelace-style/animations",
   "description": "Your favorite animate.css effects available as ES modules for use with the Web Animations API.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "homepage": "https://github.com/shoelace-style/animations",
   "author": "Cory LaViska",
   "license": "MIT",
