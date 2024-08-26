@@ -39,14 +39,21 @@ parseAnimations().then(animations => {
   animationsIndexSource += `export { easings } from './easings/easings.js'`;
   animationsIndexSource = prettier.format(animationsIndexSource, prettierOptions);
   fs.writeFileSync(path.join(outputDir, 'index.js'), animationsIndexSource, 'utf8');
+
+  // Generate types.d.ts
+  let typesSource = `declare module '@shoelace-style/animations' {
+    export type Animation = Keyframe[];
+    export const animations: Animation[];
+    export const easings: { [key: string]: string };
+    ${animations.map(animation => `export const ${animation.name}: Animation;`).join('\n')}
+  }`;
+  typesSource = prettier.format(typesSource, {...prettierOptions, parser: 'babel-ts'});
+  fs.writeFileSync(path.join(outputDir, 'index.d.ts'), typesSource, 'utf8');
 });
 
 // Copy easings.js to dist
 mkdirp.sync(path.join(outputDir, 'easings'));
 fs.copyFileSync(path.join(__basedir, 'src/easings.js'), path.join(outputDir, 'easings/easings.js'));
-
-// Copy types.d.ts to dist
-fs.copyFileSync(path.join(__basedir, 'src/index.d.ts'), path.join(outputDir, 'index.d.ts'));
 
 // Copy animate.css license to dist
 fs.copyFileSync(path.join(__basedir, 'node_modules/animate.css/LICENSE'), path.join(outputDir, 'LICENSE'));
